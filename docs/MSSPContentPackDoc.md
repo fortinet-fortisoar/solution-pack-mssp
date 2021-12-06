@@ -2,9 +2,9 @@
 
 ## Overview
 
-This article describes the FortiSOAR™ Incident Response Content Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This content pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture.
+This article describes the FortiSOAR™ Incident Response Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture.
 
-FortiSOAR™ is built using modular architecture and the FortiSOAR™ Incident Response Content Pack is the implementation of the best practices to configure and use FortiSOAR™ in an optimal manner. The FortiSOAR™ Incident Response Content Pack also contains a lot of sample/simulation/training data that enables you to experience FortiSOAR™ without having all the devices.
+FortiSOAR™ is built using modular architecture and the FortiSOAR™ Incident Response Solution Pack is the implementation of the best practices to configure and use FortiSOAR™ in an optimal manner. The FortiSOAR™ Incident Response Solution Pack also contains a lot of sample/simulation/training data that enables you to experience FortiSOAR™ without having all the devices.
 
 ## Deploying MSSP IR Solution Pack
 
@@ -48,14 +48,14 @@ Once you have completed installing the MSSP IR Solution pack Pack, you can choos
     2. Click **Execute** and then select **RemoteAlias Mapping (Master Only)**.
 
 
-3.     Click **System Settings** and in the “Application Editor” section, click **Modules** to modify the record uniqueness in the mmd for various modules as follows:
-      1.     For the Alerts and Incidents modules, add `SourceID` and `Tenant` fields in the “Record Uniqueness” section.
+3.    Click **System Settings** and in the “Application Editor” section, click **Modules** to modify the record uniqueness in the mmd for various modules as follows:
+      1.    For the Alerts and Incidents modules, add `SourceID` and `Tenant` fields in the “Record Uniqueness” section.
             ![Alerts Module - Adding Record Uniqueness](media/alertRecordUniqueness.png)
-      2.     For the Indicator module, add `Type`, `Value`, and `Tenant` fields in the “Record Uniqueness” section.
+      2. For the Indicator module, add `Type`, `Value`, and `Tenant` fields in the “Record Uniqueness” section.
              ![Indicator Module - Adding Record Uniqueness](media/indicatorRecordUniqueness.png)
-      3.     For the SLA module, add `Severity` and `Tenant` fields in the “Record Uniqueness” section.
+      3. For the SLA module, add `Severity` and `Tenant` fields in the “Record Uniqueness” section.
              ![SLA Module - Adding Record Uniqueness](media/slaRecordUniqueness.png)
-4.     Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.
+4. Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.
       ![Disabling SLA Playbooks](media/disbaleSLAPbs.png)
-5.     Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.
+5. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.
       ![Adding SLA Templates](media/addSLATemplates.png)
