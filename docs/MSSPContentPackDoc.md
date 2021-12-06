@@ -20,8 +20,8 @@ Use the following procedure as a *root* user to deploy the solution pack:
 4. On the `Import Wizard` page, click **Import From File** and selected the solution pack zip that you have downloaded, and navigate through the Import Wizard.
    ![Importing the IR Solution Pack zip file](media/importIRCP.png)
    **Note**: It is recommended not the change any configurations or options of the imported solution pack zip file.
+   Once the import is successfully completed, you can use the MSSP IR solution pack.
 
-5. Once the import is successfully completed, you can use the MSSP IR solution pack.
 
 
 Once you have completed installing the MSSP IR Solution pack Pack, you can choose to import other Solution Packs (using the same steps mentioned above) based on your requirements:
@@ -51,11 +51,12 @@ Once you have completed installing the MSSP IR Solution pack Pack, you can choos
 3.    Click **System Settings** and in the “Application Editor” section, click **Modules** to modify the record uniqueness in the mmd for various modules as follows:
       1.    For the Alerts and Incidents modules, add `SourceID` and `Tenant` fields in the “Record Uniqueness” section.
             ![Alerts Module - Adding Record Uniqueness](media/alertRecordUniqueness.png)
-      2. For the Indicator module, add `Type`, `Value`, and `Tenant` fields in the “Record Uniqueness” section.
-             ![Indicator Module - Adding Record Uniqueness](media/indicatorRecordUniqueness.png)
-      3. For the SLA module, add `Severity` and `Tenant` fields in the “Record Uniqueness” section.
-             ![SLA Module - Adding Record Uniqueness](media/slaRecordUniqueness.png)
-4. Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.
+      2.    For the Indicator module, add `Type`, `Value`, and `Tenant` fields in the “Record Uniqueness” section.
+        ![Indicator Module - Adding Record Uniqueness](media/indicatorRecordUniqueness.png)
+      3.    For the SLA module, add `Severity` and `Tenant` fields in the “Record Uniqueness” section.
+        ![SLA Module - Adding Record Uniqueness](media/slaRecordUniqueness.png)
+      4.    Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.
+
       ![Disabling SLA Playbooks](media/disbaleSLAPbs.png)
-5. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.
+4. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.
       ![Adding SLA Templates](media/addSLATemplates.png)
