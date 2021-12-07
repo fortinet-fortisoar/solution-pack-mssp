@@ -1,0 +1,229 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Alias Mapping",
+    "aliasName": null,
+    "tag": null,
+    "description": "Map alias with remote actions playbooks",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "lastModifyDate": 1638807722,
+    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/691d9664-4c0f-4921-9f8e-85f324cc2ea9",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Get Remote Actions Playbook Collection",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "\/api\/3\/workflows\/{{vars.item.uuid}}?$relationships=true",
+                    "body": "",
+                    "method": "GET"
+                },
+                "version": "3.0.5",
+                "for_each": {
+                    "item": "{{vars.Master_PB}}",
+                    "condition": ""
+                },
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "uuid": "8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
+            "id": 4400
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update All playbooks",
+            "description": null,
+            "arguments": {
+                "for_each": {
+                    "item": "{{vars.test}}",
+                    "condition": ""
+                },
+                "arguments": {
+                    "playbook_body": "{{vars.item}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "workflowReference": "\/api\/3\/workflows\/a04203de-430b-4426-9250-0843c3f7ec42"
+            },
+            "status": null,
+            "top": "840",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "uuid": "b90e9b3c-2472-4f76-ab1c-dc26ba751018",
+            "id": 4401
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "c0dd2eb2-6126-4756-99de-19e938b59e23",
+                "title": "Remote Alias Mapping (Master only)",
+                "resources": [
+                    "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "test": "[]",
+                    "input": {
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "uuid": "691d9664-4c0f-4921-9f8e-85f324cc2ea9",
+            "id": 4402
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update Alias ID",
+            "description": null,
+            "arguments": {
+                "tmp_alias_id": "{% for item in vars.steps.Get_Remote_Actions_Playbook_Collection %}{% for x in item.data.steps %}{% if x.name == \"Execute Remote Playbook\"\n%}{% for alias_name in vars.steps.Get_All_Alias.data.results %}{% if ( item.data.name | replace(\"Remote \",\"\")) == alias_name.name %}{% set test = x.arguments.update({\"playbook_alias_id\": alias_name.uuid}) %}{%endif%}{%endfor%}{% set _dummy= item.data.pop('@type')%}{% set _dum= item.data.pop('@context')%}{% set _dum= item.data.pop('versions')%}{%endif%}{%endfor%}{{vars.test.append(item)}}{%endfor%}"
+            },
+            "status": null,
+            "top": "570",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "uuid": "22b44605-fb51-4a1c-b716-152d9a63fb9f",
+            "id": 4403
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Update stepType From Body",
+            "description": null,
+            "arguments": {
+                "tmppp": "{% for item in vars.test %}\n{% for x in item.data.steps %}\n{% set c=x.stepType['@id'] %}\n{% set abc=x.update({\"stepType\":c})%}\n{%endfor%}\n{%endfor%}"
+            },
+            "status": null,
+            "top": "705",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "uuid": "e4a4374b-2078-4f59-8394-f7d94edff413",
+            "id": 4404
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "Master_PB": "[{\"name\":'Action - Domain - Unblock (Indicator)',\"uuid\":'fadf72c6-87d7-4d75-9780-8eb87d61a972'},\n{\"name\":'Action - Domain - Block (Indicator)',\"uuid\":'76b42b9c-c326-4a68-8001-063241b639f6'},\n{\"name\":'Action - Email Address - Block (Indicator)',\"uuid\":'8cceae9e-3284-488d-a834-a02777f02391'},\n{\"name\":'Action - Email Address - Unblock (Indicator)',\"uuid\":'f30eba4e-8ca2-4c0d-9ad3-658e3f66209c'},\n{\"name\":'Action - File - Block (Indicator)',\"uuid\":'867184f8-cba6-48f7-9c2f-4d8172fd03cf'},\n{\"name\":'Action - File MD5 - Block (Indicator)',\"uuid\":'20d66734-2574-4dcd-b578-2be20fa380a8'},\n{\"name\":'Action - File MD5- Unblock (Indicator)',\"uuid\":'06552880-8b69-426e-b48d-aa74e9f0986e'},\n{\"name\":'Action - File - Unblock (Indicator)',\"uuid\":'dfc0b863-2ecd-4e49-8a3e-5e6ffefbd2d9'},\n{\"name\":'Action - Host - Block (Indicator)',\"uuid\":'bf142a51-3060-4b30-a9de-563589ac9340'},\n{\"name\":'Action - Host - Isolate Host',\"uuid\":'f55b098e-95cd-4157-963b-99a4cad43996'},\n{\"name\":'Action - Host - Unblock (Indicator)',\"uuid\":'b722fd51-6579-48b7-8266-d1e70f589e58'},\n{\"name\":'Action - IP Address - Block (Indicator)',\"uuid\":'0257f1e3-166e-4059-9f5c-7dca5499c039'},\n{\"name\":'Action - IP Address - Unblock (Indicator)',\"uuid\":'16952f15-b59a-4cc0-b951-7709a7317e1a'},\n{\"name\":'Action - URL - Block (Indicator)',\"uuid\":'453d7e39-b882-4ad7-9ee2-4f816b4f28e0'},\n{\"name\":'Action - URL - Unblock (Indicator)',\"uuid\":'3943fbfb-ceb8-4a30-a4eb-1479ef6ca13e'}]"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "uuid": "b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
+            "id": 4405
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Get All Alias",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "\/api\/postman\/wf-alias\/",
+                    "body": "",
+                    "method": "GET"
+                },
+                "version": "3.0.5",
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "uuid": "b7f5a9ad-7642-4dc3-be33-9d263498d435",
+            "id": 4406
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Remove stepType -> Update All playbooks",
+            "targetStep": "\/api\/3\/workflow_steps\/b90e9b3c-2472-4f76-ab1c-dc26ba751018",
+            "sourceStep": "\/api\/3\/workflow_steps\/e4a4374b-2078-4f59-8394-f7d94edff413",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "2f7385b3-8698-4086-84e2-d2d2a39b244d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get All Alias -> Get Playbook",
+            "targetStep": "\/api\/3\/workflow_steps\/8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
+            "sourceStep": "\/api\/3\/workflow_steps\/b7f5a9ad-7642-4dc3-be33-9d263498d435",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "b1555feb-39fb-438e-8115-24df70033829"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Get All Alias",
+            "targetStep": "\/api\/3\/workflow_steps\/b7f5a9ad-7642-4dc3-be33-9d263498d435",
+            "sourceStep": "\/api\/3\/workflow_steps\/b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "190c886a-8ff7-4599-9a6e-ca16577dde82"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Update alias id -> Remove stepType",
+            "targetStep": "\/api\/3\/workflow_steps\/e4a4374b-2078-4f59-8394-f7d94edff413",
+            "sourceStep": "\/api\/3\/workflow_steps\/22b44605-fb51-4a1c-b716-152d9a63fb9f",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "83f7894f-c272-4431-b697-e1be35efc141"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
+            "sourceStep": "\/api\/3\/workflow_steps\/691d9664-4c0f-4921-9f8e-85f324cc2ea9",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "32895426-7e88-4bd8-b82e-cbf65eed2635"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Get Remote Actions Playbook Collection -> Update Alias ID",
+            "targetStep": "\/api\/3\/workflow_steps\/22b44605-fb51-4a1c-b716-152d9a63fb9f",
+            "sourceStep": "\/api\/3\/workflow_steps\/8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "14eafe07-c6b9-4ac7-a86d-4c50eee28f9f"
+        }
+    ],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "12d7b0f7-4432-47e6-85ed-c52821edd594",
+    "recordTags": [],
+    "id": 1131,
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1638807723,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1638807723,
+    "owners": [],
+    "isPrivate": false
+}

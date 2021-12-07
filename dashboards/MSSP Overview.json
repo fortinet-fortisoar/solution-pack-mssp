@@ -1,0 +1,1213 @@
+{
+    "@context": "\/api\/3\/contexts\/Dashboard",
+    "@type": "Dashboard",
+    "uuid": "5da70a46-90a2-4640-8f7f-acee1fbcd2a1",
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1638807725,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1638807725,
+    "displayName": "MSSP Overview",
+    "type": "rows",
+    "templateType": "dashboard",
+    "roles": [
+        "\/api\/3\/roles\/17562d60-b841-4ed7-912b-1ebaf063c8c9"
+    ],
+    "parentTemplateId": null,
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "a5798a0f-98c2-4c3e-9ea4-3b3e53fc5a29",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "sectionHeader",
+                                                            "config": {
+                                                                "wid": "14fa337b-ded5-4df9-a07f-2372331a0a91",
+                                                                "query": {
+                                                                    "filters": [],
+                                                                    "sort": [],
+                                                                    "limit": 10
+                                                                },
+                                                                "sectionText": "<p><span style=\"font-size: 14pt; color: #3598db;\">Alerts Details<\/span><\/p>"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "84ec1a55-1e2e-4073-bdd3-17b87e1b9374"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "77a8a18a-5985-477f-8d8c-5392dec5ec02",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "severity.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                                            "_value": {
+                                                                                "itemValue": "Closed",
+                                                                                "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        {
+                                                                            "logic": "AND",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "gte",
+                                                                                    "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                                                    "type": "datetime"
+                                                                                },
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "lte",
+                                                                                    "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                                                    "type": "datetime"
+                                                                                }
+                                                                            ],
+                                                                            "_field": "createDate",
+                                                                            "_value": {
+                                                                                "differenceType": "days",
+                                                                                "differenceValue": -7
+                                                                            },
+                                                                            "_operator": "date",
+                                                                            "type": "datetime"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "severity",
+                                                                            "field": "severity.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "severity.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "severity.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "firstGrouping": "",
+                                                                    "fieldName": "severity"
+                                                                },
+                                                                "aggregate": true,
+                                                                "resource": "alerts",
+                                                                "chart": "donut",
+                                                                "title": "Total Open Alerts per severity for Last 7 days"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "d9ea7478-93ad-4355-b15f-4ab4b73604bd",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                                            "_value": {
+                                                                                "itemValue": "Closed",
+                                                                                "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        {
+                                                                            "logic": "OR",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "severity",
+                                                                                    "operator": "eq",
+                                                                                    "value": "\/api\/3\/picklists\/40187287-89fc-4e9c-b717-e9443d57eedb",
+                                                                                    "_value": {
+                                                                                        "itemValue": "High",
+                                                                                        "@id": "\/api\/3\/picklists\/40187287-89fc-4e9c-b717-e9443d57eedb"
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                },
+                                                                                {
+                                                                                    "field": "severity",
+                                                                                    "operator": "eq",
+                                                                                    "value": "\/api\/3\/picklists\/7efa2220-39bb-44e4-961f-ac368776e3b0",
+                                                                                    "_value": {
+                                                                                        "itemValue": "Critical",
+                                                                                        "@id": "\/api\/3\/picklists\/7efa2220-39bb-44e4-961f-ac368776e3b0"
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "uuid",
+                                                                            "field": "tenant.uuid"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "name",
+                                                                            "field": "tenant.name"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "tenant",
+                                                                    "createTimeField": "createDate",
+                                                                    "responseTimeField": "resolveddate",
+                                                                    "dateFormat": "yyyy-MM-dd",
+                                                                    "displayValues": [
+                                                                        "name"
+                                                                    ]
+                                                                },
+                                                                "aggregate": true,
+                                                                "chart": "donut",
+                                                                "resource": "alerts",
+                                                                "title": "Critical\/High Open Alerts per Tenant",
+                                                                "showCount": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "258b425e-f47b-46d0-8a58-d3eb90b527f3"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardCount",
+                                                            "config": {
+                                                                "wid": "b0a46778-eb9e-4647-8653-0fdc0942de9f",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "ackSlaStatus.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "ackSlaStatus",
+                                                                            "field": "ackSlaStatus.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "ackSlaStatus.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "ackSlaStatus.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "ackSlaStatus"
+                                                                },
+                                                                "aggregate": true,
+                                                                "title": "Alert Ack SLA",
+                                                                "resource": "alerts"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardCount",
+                                                            "config": {
+                                                                "wid": "6552f2c2-dbd6-450a-a24c-4369559a6c49",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "respSlaStatus.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "respSlaStatus",
+                                                                            "field": "respSlaStatus.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "respSlaStatus.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "respSlaStatus.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "respSlaStatus"
+                                                                },
+                                                                "aggregate": true,
+                                                                "title": "Alert Response SLA",
+                                                                "resource": "alerts"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "76ff5ecc-0928-49d0-ba97-2281142fbcdb"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "03499781-d97a-417e-93ef-697685b75bcb",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "type.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                                            "_value": {
+                                                                                "display": "Closed",
+                                                                                "itemValue": "Closed",
+                                                                                "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "type",
+                                                                            "field": "type.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "firstOrderIndex",
+                                                                            "field": "type.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "firstGrouping": "type"
+                                                                },
+                                                                "aggregate": true,
+                                                                "resource": "alerts",
+                                                                "chart": "bar",
+                                                                "title": "Open Alerts by Type"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "bf74da78-d838-41e7-9e34-c69022f0d466"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "146009cc-2163-41e9-9eb4-c90a53223cc9",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "totalCount",
+                                                                "cardLayout": true,
+                                                                "title": "Total Alers Resolved",
+                                                                "resource": "alerts",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                                            "_value": {
+                                                                                "display": "Closed",
+                                                                                "itemValue": "Closed",
+                                                                                "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "timeRange": "createDate"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "26e280d0-a727-43ca-a4a4-9028844b8b20",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "ratio",
+                                                                "title": "Escalation Ration",
+                                                                "resource": "alerts",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "escalatedtoincident",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/fa12313b-66af-4a2e-864e-a5f19241b734",
+                                                                            "_value": {
+                                                                                "display": "Yes",
+                                                                                "itemValue": "Yes",
+                                                                                "@id": "\/api\/3\/picklists\/fa12313b-66af-4a2e-864e-a5f19241b734"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "ratioResource": "alerts",
+                                                                "ratioquery": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": []
+                                                                },
+                                                                "timeRange": "createDate",
+                                                                "ratiotimeRange": "createDate"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "f558b94a-57c0-40b1-a72c-2988d72eb452",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "ratio",
+                                                                "title": "False Positive Alerts Ratio",
+                                                                "resource": "alerts",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "closureReason",
+                                                                            "operator": "eq",
+                                                                            "value": "\/api\/3\/picklists\/2b0112f6-4746-4dab-ada6-a8cd1e675572",
+                                                                            "_value": {
+                                                                                "display": "False Positive",
+                                                                                "itemValue": "False Positive",
+                                                                                "@id": "\/api\/3\/picklists\/2b0112f6-4746-4dab-ada6-a8cd1e675572"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "ratioResource": "alerts",
+                                                                "ratioquery": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": []
+                                                                },
+                                                                "timeRange": "createDate",
+                                                                "ratiotimeRange": "createDate"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "e39a3a84-3ace-40ff-8011-32bbf4bfdcbe"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "4774b1ca-bcc5-4cef-9c2e-014b3c8893ba"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "823a3444-e070-4774-addb-abc6349059a8"
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "bed1a126-ea40-4fbc-b5cb-74204e65c73b",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "sectionHeader",
+                                                            "config": {
+                                                                "wid": "4fa8b93f-5968-4d9a-b8f4-dbf9dc3b468d",
+                                                                "query": {
+                                                                    "filters": [],
+                                                                    "sort": [],
+                                                                    "limit": 10
+                                                                },
+                                                                "sectionText": "<p><span style=\"font-size: 14pt; color: #3598db;\">Incidents Details<\/span><\/p>"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "f3ce3c7a-9bec-4fa4-8a35-813b13736815"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "a5cc701b-74b9-46b6-8714-d789e5fd38cc",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "severity.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "logic": "AND",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "gte",
+                                                                                    "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                                                    "type": "datetime"
+                                                                                },
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "lte",
+                                                                                    "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                                                    "type": "datetime"
+                                                                                }
+                                                                            ],
+                                                                            "_field": "createDate",
+                                                                            "_value": {
+                                                                                "differenceType": "days",
+                                                                                "differenceValue": -7
+                                                                            },
+                                                                            "_operator": "date",
+                                                                            "type": "datetime"
+                                                                        },
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                                            "_value": {
+                                                                                "itemValue": "Resolved",
+                                                                                "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "severity",
+                                                                            "field": "severity.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "severity.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "severity.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "firstGrouping": "",
+                                                                    "fieldName": "severity"
+                                                                },
+                                                                "aggregate": true,
+                                                                "resource": "incidents",
+                                                                "title": "Total Open Incidents per Severity for Last 7 Days",
+                                                                "chart": "donut"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "a4b0bb0b-b086-4e31-9920-4236f6abc2fc",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                                            "_value": {
+                                                                                "itemValue": "Resolved",
+                                                                                "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        {
+                                                                            "logic": "OR",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "severity",
+                                                                                    "operator": "eq",
+                                                                                    "value": "\/api\/3\/picklists\/40187287-89fc-4e9c-b717-e9443d57eedb",
+                                                                                    "_value": {
+                                                                                        "itemValue": "High",
+                                                                                        "@id": "\/api\/3\/picklists\/40187287-89fc-4e9c-b717-e9443d57eedb"
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                },
+                                                                                {
+                                                                                    "field": "severity",
+                                                                                    "operator": "eq",
+                                                                                    "value": "\/api\/3\/picklists\/7efa2220-39bb-44e4-961f-ac368776e3b0",
+                                                                                    "_value": {
+                                                                                        "itemValue": "Critical",
+                                                                                        "@id": "\/api\/3\/picklists\/7efa2220-39bb-44e4-961f-ac368776e3b0"
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "uuid",
+                                                                            "field": "tenant.uuid"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "name",
+                                                                            "field": "tenant.name"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "tenant",
+                                                                    "displayValues": [
+                                                                        "name"
+                                                                    ]
+                                                                },
+                                                                "aggregate": true,
+                                                                "resource": "incidents",
+                                                                "title": "Critical\/High Unresolved Incidents per Tenant",
+                                                                "chart": "donut",
+                                                                "showCount": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "0169e6af-be09-4165-b53b-1171fc04986a"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardCount",
+                                                            "config": {
+                                                                "wid": "8b48201e-e6c8-4d23-90f8-8435b7de5f4a",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "slaState.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "slaState",
+                                                                            "field": "slaState.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "slaState.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "slaState.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "slaState"
+                                                                },
+                                                                "aggregate": true,
+                                                                "title": "Incidents Ack SLA",
+                                                                "resource": "incidents"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "cardCount",
+                                                            "config": {
+                                                                "wid": "d51e4dd4-b012-48cb-94f6-4b1521c3ac4e",
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "resSla.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "resSla",
+                                                                            "field": "resSla.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "resSla.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "resSla.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "resSla"
+                                                                },
+                                                                "aggregate": true,
+                                                                "title": "Incidents Response SLA",
+                                                                "resource": "incidents"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "ff1d0abb-cd24-4b06-bf31-615ddd58cf35"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "611b4422-8071-4fae-8d7e-8bcb19bf46e8",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "category.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        },
+                                                                        {
+                                                                            "field": "phase.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "logic": "AND",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "gte",
+                                                                                    "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                                                    "type": "datetime"
+                                                                                },
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "lte",
+                                                                                    "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                                                    "type": "datetime"
+                                                                                }
+                                                                            ],
+                                                                            "_field": "createDate",
+                                                                            "_value": {
+                                                                                "differenceType": "days",
+                                                                                "differenceValue": -7
+                                                                            },
+                                                                            "_operator": "date",
+                                                                            "type": "datetime"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "category",
+                                                                            "field": "category.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "firstOrderIndex",
+                                                                            "field": "category.orderIndex"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "phase",
+                                                                            "field": "phase.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "secondOrderIndex",
+                                                                            "field": "phase.orderIndex"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "phase.color"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "firstGrouping": "category",
+                                                                    "secondGrouping": "phase"
+                                                                },
+                                                                "aggregate": true,
+                                                                "chart": "bar",
+                                                                "resource": "incidents",
+                                                                "title": "Incidents Type per Phase For Last 7 Days"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-9"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "chart",
+                                                            "config": {
+                                                                "wid": "56b64f6e-543a-4a88-a323-a857c674e2bc",
+                                                                "widgetAlwaysDisplay": true,
+                                                                "query": {
+                                                                    "sort": [
+                                                                        {
+                                                                            "field": "category.orderIndex",
+                                                                            "direction": "ASC"
+                                                                        }
+                                                                    ],
+                                                                    "limit": 2147483647,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "status",
+                                                                            "operator": "neq",
+                                                                            "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                                            "_value": {
+                                                                                "itemValue": "Resolved",
+                                                                                "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        {
+                                                                            "logic": "AND",
+                                                                            "filters": [
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "gte",
+                                                                                    "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                                                    "type": "datetime"
+                                                                                },
+                                                                                {
+                                                                                    "field": "createDate",
+                                                                                    "operator": "lte",
+                                                                                    "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                                                    "type": "datetime"
+                                                                                }
+                                                                            ],
+                                                                            "_field": "createDate",
+                                                                            "_value": {
+                                                                                "differenceType": "days",
+                                                                                "differenceValue": -7
+                                                                            },
+                                                                            "_operator": "date",
+                                                                            "type": "datetime"
+                                                                        }
+                                                                    ],
+                                                                    "aggregates": [
+                                                                        {
+                                                                            "operator": "countdistinct",
+                                                                            "field": "*",
+                                                                            "alias": "total"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "category",
+                                                                            "field": "category.itemValue"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "color",
+                                                                            "field": "category.color"
+                                                                        },
+                                                                        {
+                                                                            "operator": "groupby",
+                                                                            "alias": "orderIndex",
+                                                                            "field": "category.orderIndex"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "mapping": {
+                                                                    "assignedToPerson": "",
+                                                                    "fieldName": "category"
+                                                                },
+                                                                "aggregate": true,
+                                                                "title": "Total Open Incidents per Type For Last 7 days",
+                                                                "resource": "incidents",
+                                                                "chart": "pie"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-3"
+                                                }
+                                            ],
+                                            "wid": "7b2576a6-6c1e-4cfa-ab9b-18cae2018ac1"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [],
+                                                    "style": "col-lg-6"
+                                                },
+                                                {
+                                                    "widgets": [],
+                                                    "style": "col-lg-6"
+                                                }
+                                            ],
+                                            "wid": "ed4c0d35-5d2c-4e85-8f4a-99f874a2dd47"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "9c6a914b-8231-4534-9228-d9169a7545ef"
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "1c009d05-3b7d-4459-80d6-7e5c8a18ad40",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "sectionHeader",
+                                                            "config": {
+                                                                "wid": "f530891e-73c9-4187-9c28-d8f7308f87e8",
+                                                                "query": {
+                                                                    "filters": [],
+                                                                    "sort": [],
+                                                                    "limit": 10
+                                                                },
+                                                                "sectionText": "<p><span style=\"font-size: 14pt; color: #3598db;\">KEY PERFORMANCE METRICS<\/span><\/p>"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-12"
+                                                }
+                                            ],
+                                            "wid": "6dabffab-1530-40e0-98c8-e707122f576e"
+                                        },
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "f9f58036-1833-4f01-a564-2025710aec1c",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "paCount",
+                                                                "title": "Automated Actions Run"
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "db68c157-bd34-4b15-aa2a-7f777e0acd5d",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "time",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "roi",
+                                                                "title": "Overall Time Saved",
+                                                                "perMin": 5
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "499a43ce-04d6-42b0-88fd-a7fa706cf672",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "showSavings": "dollar",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "roi",
+                                                                "title": "ROI",
+                                                                "perHour": 60,
+                                                                "perMin": 5
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "c936140d-7031-4bdb-8386-bcd41e65b780"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "ffdea2ca-b1af-413f-8ad0-72904d060388"
+            }
+        ],
+        "wid": "5a8fb935-ec99-4bc1-95fd-4c1e6c993769"
+    },
+    "filterArray": [],
+    "updateDate": null
+}
