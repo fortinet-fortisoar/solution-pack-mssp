@@ -1,0 +1,154 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Enable Remote Execution Flag",
+    "aliasName": null,
+    "tag": null,
+    "description": "Enable remote execution flag on all tenant actions playbooks",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "lastModifyDate": 1638807722,
+    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Enable Remote Reference Flag",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "\/api\/3\/workflows\/{{vars.item}}",
+                    "body": "{\"remoteExecutableFlag\": true }",
+                    "method": "PUT"
+                },
+                "version": "3.0.5",
+                "for_each": {
+                    "item": "{{vars.IRIs}}",
+                    "condition": ""
+                },
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "435",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "uuid": "89869fad-268e-4b4f-a227-e718bdb110db",
+            "id": 4407
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "df01e447-b0d7-4320-8eaa-1920cf39a7e8",
+                "title": "Enable Remote Execution Flag (Tenant only)",
+                "resources": [
+                    "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "uuid": "d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
+            "id": 4408
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "IRIs": "['7c5946d2-be83-4991-8b67-fdc568166260',\n'0a26884c-7ca9-4209-95f2-f70fd6b4566d',\n'0bcfd971-4436-4de5-861f-7c3741437e72',\n'87c43afc-599c-4e59-9f66-a7b5f6511c17',\n'8ae6240e-17de-4796-8190-c5f9ff450c82',\n'f43bb47f-a473-4ea2-bc1e-b6a3767960ba',\n'da0ba196-0f23-448e-9a92-f51578d02ca7',\n'548016b2-7012-4011-a455-4e31e9732ed5',\n'482803cf-884a-4f9a-a82d-c3819e962554',\n'0ab5b01a-7644-4efd-babe-5afafd9c8379',\n'79ebfed2-86ee-404d-b69c-02a448e1144d',\n'6f65b91f-4ab7-41f5-b7a0-e0f6fa90827e',\n'7164f14a-5fa6-439b-a9d0-aba48ad8817a',\n'ab2eddaf-a28a-4b3a-8107-8f15544c4905','9938fc70-8dc8-4cf3-b5de-9ef8ce0f76ec']"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "uuid": "2c253956-ba1a-4efa-acd8-47dc44589b4a",
+            "id": 4409
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Disable Remote Reference Flag",
+            "description": null,
+            "arguments": {
+                "params": {
+                    "iri": "\/api\/3\/workflows\/{{vars.item}}",
+                    "body": "{\"remoteExecutableFlag\": false }",
+                    "method": "PUT"
+                },
+                "version": "3.0.5",
+                "for_each": {
+                    "item": "{{vars.IRIs}}",
+                    "condition": ""
+                },
+                "connector": "cyops_utilities",
+                "operation": "make_cyops_request",
+                "operationTitle": "FSR: Make FortiSOAR API Call",
+                "step_variables": []
+            },
+            "status": null,
+            "top": "300",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "uuid": "812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
+            "id": 4410
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Disable Remote Reference Flag -> Enable Remote Reference Flag",
+            "targetStep": "\/api\/3\/workflow_steps\/89869fad-268e-4b4f-a227-e718bdb110db",
+            "sourceStep": "\/api\/3\/workflow_steps\/812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "db1f8032-e873-455c-b5ee-0209da1024da"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/2c253956-ba1a-4efa-acd8-47dc44589b4a",
+            "sourceStep": "\/api\/3\/workflow_steps\/d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "72d17fd9-1c01-485d-ab4d-22bca7a6ffc5"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Get Remote Reference playbooks",
+            "targetStep": "\/api\/3\/workflow_steps\/812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
+            "sourceStep": "\/api\/3\/workflow_steps\/2c253956-ba1a-4efa-acd8-47dc44589b4a",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "9c0e22b1-fcc9-4894-918d-bccbf439b9bf"
+        }
+    ],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "35757a7c-f02b-4a25-bc63-06c75def664c",
+    "recordTags": [],
+    "id": 1132,
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1638807723,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1638807723,
+    "owners": [],
+    "isPrivate": false
+}

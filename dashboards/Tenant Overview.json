@@ -1,0 +1,1577 @@
+{
+    "@context": "\/api\/3\/contexts\/Dashboard",
+    "@type": "Dashboard",
+    "uuid": "de0e72b9-1e0e-44de-8c2c-ac6173d63e86",
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1638807725,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1638807725,
+    "displayName": "Tenant Overview",
+    "type": "rows",
+    "templateType": "dashboard",
+    "roles": [
+        "\/api\/3\/roles\/17562d60-b841-4ed7-912b-1ebaf063c8c9"
+    ],
+    "parentTemplateId": null,
+    "config": {
+        "rows": [
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "sectionHeader",
+                                "config": {
+                                    "wid": "bc179033-bf01-4b64-bc00-bc694079b3ad",
+                                    "query": {
+                                        "filters": [],
+                                        "sort": [],
+                                        "limit": 10
+                                    },
+                                    "sectionText": "<p>Data for tenant <span class=\"cs-richtext-field\" title=\"Configured Input Field - Tenant\" contenteditable=\"false\">{{tenant.name}}<\/span><\/p>",
+                                    "fieldType": "configured input fields",
+                                    "editorType": "html"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-12"
+                    }
+                ],
+                "wid": "69e2d5bc-5935-44af-ad54-1f65859ecc88",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "performanceMetrics",
+                                "config": {
+                                    "wid": "4716f630-9c48-43e3-a6b2-5a9a704d904d",
+                                    "includeFailedPlaybooks": true,
+                                    "excludeConfigActions": true,
+                                    "days": 7,
+                                    "showPercentageChanges": true,
+                                    "metricsType": "totalCount",
+                                    "title": "Total Alerts Resolved",
+                                    "resource": "alerts",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "eq",
+                                                "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                "_value": {
+                                                    "display": "Closed",
+                                                    "itemValue": "Closed",
+                                                    "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "timeRange": "createDate",
+                                    "showSavings": "dollar",
+                                    "grouping": {
+                                        "primary": [],
+                                        "secondary": []
+                                    }
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "performanceMetrics",
+                                "config": {
+                                    "wid": "f91f8ac8-ec84-490b-a56c-de09f2ad87f8",
+                                    "includeFailedPlaybooks": true,
+                                    "excludeConfigActions": true,
+                                    "days": 7,
+                                    "showPercentageChanges": true,
+                                    "metricsType": "ratio",
+                                    "title": "Alerts Escalation Ratio",
+                                    "resource": "alerts",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "escalatedtoincident",
+                                                "operator": "eq",
+                                                "value": "\/api\/3\/picklists\/fa12313b-66af-4a2e-864e-a5f19241b734",
+                                                "_value": {
+                                                    "display": "Yes",
+                                                    "itemValue": "Yes",
+                                                    "@id": "\/api\/3\/picklists\/fa12313b-66af-4a2e-864e-a5f19241b734"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "timeRange": "createDate",
+                                    "ratioResource": "alerts",
+                                    "ratioquery": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "ratiotimeRange": "createDate",
+                                    "showSavings": "dollar",
+                                    "grouping": {
+                                        "primary": [],
+                                        "secondary": []
+                                    }
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "performanceMetrics",
+                                "config": {
+                                    "wid": "fdc625b4-624f-4642-b782-bd8d6285a17e",
+                                    "grouping": {
+                                        "primary": [],
+                                        "secondary": []
+                                    },
+                                    "showSavings": "dollar",
+                                    "includeFailedPlaybooks": true,
+                                    "excludeConfigActions": true,
+                                    "days": 7,
+                                    "showPercentageChanges": true,
+                                    "metricsType": "ratio",
+                                    "title": "False Positive Alerts Ratio",
+                                    "resource": "alerts",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "closureReason",
+                                                "operator": "eq",
+                                                "value": "\/api\/3\/picklists\/2b0112f6-4746-4dab-ada6-a8cd1e675572",
+                                                "_value": {
+                                                    "display": "False Positive",
+                                                    "itemValue": "False Positive",
+                                                    "@id": "\/api\/3\/picklists\/2b0112f6-4746-4dab-ada6-a8cd1e675572"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "ratioResource": "alerts",
+                                    "ratioquery": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "timeRange": "createDate",
+                                    "ratiotimeRange": "createDate"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    }
+                ],
+                "wid": "5f90aa7c-545f-41bd-a378-7b8e2570e99e",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "wid": "9044eef9-3f3a-46ed-a054-03240cf16a4f",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "severity.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "select",
+                                                "alias": "severity",
+                                                "field": "severity.itemValue"
+                                            },
+                                            {
+                                                "operator": "select",
+                                                "alias": "color",
+                                                "field": "severity.color"
+                                            },
+                                            {
+                                                "operator": "select",
+                                                "alias": "orderIndex",
+                                                "field": "severity.orderIndex"
+                                            },
+                                            {
+                                                "operator": "select",
+                                                "alias": "discoveredOn",
+                                                "field": "discoveredOn"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "severity",
+                                        "dateFieldName": "discoveredOn",
+                                        "timeScope": "day",
+                                        "dateFormat": "%b %e"
+                                    },
+                                    "aggregate": true,
+                                    "resource": "incidents",
+                                    "chart": "timeseries",
+                                    "title": "Incidents Timeline"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-9"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "performanceMetrics",
+                                "config": {
+                                    "wid": "a1fbb070-2a46-4090-a05e-6ed03f6b38e0",
+                                    "showSavings": "dollar",
+                                    "includeFailedPlaybooks": true,
+                                    "excludeConfigActions": true,
+                                    "days": 7,
+                                    "showPercentageChanges": true,
+                                    "metricsType": "totalCount",
+                                    "resource": "incidents",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "logic": "AND",
+                                                "filters": [
+                                                    {
+                                                        "field": "resDueBy",
+                                                        "operator": "lt",
+                                                        "value": "{{getRelativeDate(0,0,0,0,1,\"start\")}}",
+                                                        "type": "datetime"
+                                                    }
+                                                ],
+                                                "_field": "resDueBy",
+                                                "_value": {
+                                                    "differenceType": "mins",
+                                                    "differenceValue": 1
+                                                },
+                                                "_operator": "lt",
+                                                "type": "datetime"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "title": "Overdue Incidents",
+                                    "timeRange": "createDate",
+                                    "grouping": {
+                                        "primary": [],
+                                        "secondary": []
+                                    }
+                                }
+                            },
+                            {
+                                "type": "performanceMetrics",
+                                "config": {
+                                    "wid": "15c3d9e2-d3bd-4529-a6f4-b4b8f069c669",
+                                    "showSavings": "dollar",
+                                    "includeFailedPlaybooks": true,
+                                    "excludeConfigActions": true,
+                                    "days": 7,
+                                    "showPercentageChanges": true,
+                                    "metricsType": "timeToX",
+                                    "title": "MTTR",
+                                    "resource": "incidents",
+                                    "query": {
+                                        "sort": [],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "eq",
+                                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                "_value": {
+                                                    "display": "Resolved",
+                                                    "itemValue": "Resolved",
+                                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ]
+                                    },
+                                    "opration": "mean",
+                                    "toDateField": "resolveddate",
+                                    "fromDateField": "identificationDate",
+                                    "timeRange": "createDate",
+                                    "grouping": {
+                                        "primary": [],
+                                        "secondary": []
+                                    },
+                                    "cardLayout": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-3"
+                    }
+                ],
+                "wid": "10d7cf0e-d920-486c-b4b5-05b65f9c3938",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardCount",
+                                "config": {
+                                    "wid": "7770bee7-15ae-428f-8f79-e4e02a2d57fa",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "ackSlaStatus.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "logic": "AND",
+                                                "filters": [
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "gte",
+                                                        "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                        "type": "datetime"
+                                                    },
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "lte",
+                                                        "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                        "type": "datetime"
+                                                    }
+                                                ],
+                                                "_field": "createDate",
+                                                "_value": {
+                                                    "differenceType": "days",
+                                                    "differenceValue": -7
+                                                },
+                                                "_operator": "date",
+                                                "type": "datetime"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "ackSlaStatus",
+                                                "field": "ackSlaStatus.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "ackSlaStatus.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "ackSlaStatus.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "ackSlaStatus"
+                                    },
+                                    "aggregate": true,
+                                    "title": "Alert Ack SLA for Last 7 Days",
+                                    "resource": "alerts"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardCount",
+                                "config": {
+                                    "wid": "d1fb3696-1bd2-47ff-90b9-5be1e6b3f2ed",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "slaState.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "logic": "AND",
+                                                "filters": [
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "gte",
+                                                        "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                        "type": "datetime"
+                                                    },
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "lte",
+                                                        "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                        "type": "datetime"
+                                                    }
+                                                ],
+                                                "_field": "createDate",
+                                                "_value": {
+                                                    "differenceType": "days",
+                                                    "differenceValue": -7
+                                                },
+                                                "_operator": "date",
+                                                "type": "datetime"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "slaState",
+                                                "field": "slaState.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "slaState.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "slaState.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "slaState"
+                                    },
+                                    "aggregate": true,
+                                    "title": "Incident Ack SLA for Last 7 Days",
+                                    "resource": "incidents"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardCount",
+                                "config": {
+                                    "wid": "7c8fc7b2-b53d-4f85-a578-f5654a6098c5",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "respSlaStatus.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "logic": "AND",
+                                                "filters": [
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "gte",
+                                                        "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                        "type": "datetime"
+                                                    },
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "lte",
+                                                        "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                        "type": "datetime"
+                                                    }
+                                                ],
+                                                "_field": "createDate",
+                                                "_value": {
+                                                    "differenceType": "days",
+                                                    "differenceValue": -7
+                                                },
+                                                "_operator": "date",
+                                                "type": "datetime"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "respSlaStatus",
+                                                "field": "respSlaStatus.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "respSlaStatus.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "respSlaStatus.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "respSlaStatus"
+                                    },
+                                    "aggregate": true,
+                                    "title": "Alert Response SLA for Last 7 Days",
+                                    "resource": "alerts"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "cardCount",
+                                "config": {
+                                    "wid": "28baa7b4-0846-4975-8796-f6a52b2f4f45",
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "resSla.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 30,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "logic": "AND",
+                                                "filters": [
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "gte",
+                                                        "value": "{{getRelativeDate(0,0,-7,\"start\",\"start\",\"start\")}}",
+                                                        "type": "datetime"
+                                                    },
+                                                    {
+                                                        "field": "createDate",
+                                                        "operator": "lte",
+                                                        "value": "{{getRelativeDate(0,0,0,0,0,0)}}",
+                                                        "type": "datetime"
+                                                    }
+                                                ],
+                                                "_field": "createDate",
+                                                "_value": {
+                                                    "differenceType": "days",
+                                                    "differenceValue": -7
+                                                },
+                                                "_operator": "date",
+                                                "type": "datetime"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "resSla",
+                                                "field": "resSla.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "resSla.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "resSla.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "resSla"
+                                    },
+                                    "aggregate": true,
+                                    "title": "Incident Response SLA for Last 7 Days",
+                                    "resource": "incidents"
+                                }
+                            }
+                        ],
+                        "style": "col-lg-3"
+                    }
+                ],
+                "wid": "c7022c05-5f84-4158-8fa3-6bd56cebef3b",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "wid": "f2ac06a4-0f0f-4861-836f-8767510938af",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "phase.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "neq",
+                                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                "_value": {
+                                                    "display": "Resolved",
+                                                    "itemValue": "Resolved",
+                                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "phase",
+                                                "field": "phase.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "phase.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "phase.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "phase"
+                                    },
+                                    "aggregate": true,
+                                    "chart": "donut",
+                                    "resource": "incidents",
+                                    "title": "Unresolved Incidents By Phase",
+                                    "showCount": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "severity.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "neq",
+                                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                "_value": {
+                                                    "display": "Resolved",
+                                                    "itemValue": "Resolved",
+                                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "severity",
+                                                "field": "severity.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "severity.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "severity.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "severity"
+                                    },
+                                    "aggregate": true,
+                                    "wid": "fe085b68-fe3e-43fd-a66f-43f9189d8f6c",
+                                    "title": "Unresolved Incidents By Severity",
+                                    "resource": "incidents",
+                                    "chart": "pie",
+                                    "widgetAlwaysDisplay": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "category.orderIndex",
+                                                "direction": "ASC"
+                                            },
+                                            {
+                                                "field": "severity.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "neq",
+                                                "value": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae",
+                                                "_value": {
+                                                    "itemValue": "Resolved",
+                                                    "@id": "\/api\/3\/picklists\/bb73fd5e-f699-11e7-8c3f-9a214cf093ae"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "category",
+                                                "field": "category.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "firstOrderIndex",
+                                                "field": "category.orderIndex"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "severity",
+                                                "field": "severity.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "secondOrderIndex",
+                                                "field": "severity.orderIndex"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "severity.color"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "firstGrouping": "category",
+                                        "secondGrouping": "severity"
+                                    },
+                                    "aggregate": true,
+                                    "wid": "8e9b983f-0646-426b-9df3-8d8f51598639",
+                                    "title": "Unresolved Incidents By Type",
+                                    "resource": "incidents",
+                                    "chart": "bar",
+                                    "barStyle": "horizontal",
+                                    "widgetAlwaysDisplay": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-4"
+                    }
+                ],
+                "wid": "1b5de2f2-6c29-46f6-bb32-5fa3147858a4",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "wid": "23384b38-e24a-44d1-80bc-d8a95608a553",
+                                    "widgetAlwaysDisplay": true,
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "severity.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "status",
+                                                "operator": "neq",
+                                                "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                "_value": {
+                                                    "display": "Closed",
+                                                    "itemValue": "Closed",
+                                                    "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "severity",
+                                                "field": "severity.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "severity.color"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "orderIndex",
+                                                "field": "severity.orderIndex"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "severity",
+                                        "displayValues": [
+                                            "name"
+                                        ]
+                                    },
+                                    "aggregate": true,
+                                    "resource": "alerts",
+                                    "chart": "donut",
+                                    "title": "Open Alerts by Severity",
+                                    "showCount": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "chart",
+                                "config": {
+                                    "query": {
+                                        "sort": [
+                                            {
+                                                "field": "source",
+                                                "direction": "ASC"
+                                            },
+                                            {
+                                                "field": "severity.orderIndex",
+                                                "direction": "ASC"
+                                            }
+                                        ],
+                                        "limit": 2147483647,
+                                        "logic": "AND",
+                                        "filters": [
+                                            {
+                                                "field": "status",
+                                                "operator": "neq",
+                                                "value": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232",
+                                                "_value": {
+                                                    "display": "Closed",
+                                                    "itemValue": "Closed",
+                                                    "@id": "\/api\/3\/picklists\/fac53e73-8d16-4189-98d5-95fbd1555232"
+                                                },
+                                                "type": "object"
+                                            },
+                                            {
+                                                "field": "tenant",
+                                                "operator": "eq",
+                                                "value": "{{tenant}}",
+                                                "_value": {
+                                                    "display": "",
+                                                    "itemValue": "",
+                                                    "@id": "{{tenant}}"
+                                                },
+                                                "type": "object"
+                                            }
+                                        ],
+                                        "aggregates": [
+                                            {
+                                                "operator": "countdistinct",
+                                                "field": "*",
+                                                "alias": "total"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "source",
+                                                "field": "source"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "severity",
+                                                "field": "severity.itemValue"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "secondOrderIndex",
+                                                "field": "severity.orderIndex"
+                                            },
+                                            {
+                                                "operator": "groupby",
+                                                "alias": "color",
+                                                "field": "severity.color"
+                                            }
+                                        ]
+                                    },
+                                    "mapping": {
+                                        "assignedToPerson": "",
+                                        "fieldName": "phase",
+                                        "firstGrouping": "source",
+                                        "secondGrouping": "severity"
+                                    },
+                                    "aggregate": true,
+                                    "wid": "357e0152-1168-49ef-b6ac-bb212a294edb",
+                                    "title": "Open Alerts per  source",
+                                    "resource": "alerts",
+                                    "chart": "bar",
+                                    "barStyle": "vertical",
+                                    "widgetAlwaysDisplay": true
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "5d804b72-3410-4c70-bc9d-0fbc3ef19b53",
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "887a4764-b24c-4b90-afcf-5c63de76559c",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "590bd9a8-6820-4283-9f9b-bddb0082e558",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "title": "Mean Time For Identification",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "toDateField": "confirmationDate",
+                                                                "fromDateField": "identificationDate",
+                                                                "timeRange": "createDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "7b0e47bd-22bc-4ef4-a96a-f37d0da5880e",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "title": "Mean Time For Confirmation",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "toDateField": "containmentDate",
+                                                                "fromDateField": "confirmationDate",
+                                                                "timeRange": "createDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "029f88f2-cd45-411a-b3d5-89514db69b6d",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "title": "Mean Time For Containment",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "toDateField": "eradicationDate",
+                                                                "fromDateField": "containmentDate",
+                                                                "timeRange": "createDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "a9974559-d62d-41b4-ace3-a81b60cf911f",
+                                            "container": true,
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    },
+                    {
+                        "widgets": [
+                            {
+                                "type": "rows",
+                                "config": {
+                                    "wid": "9ab36c32-37e8-48b2-97e4-ad8b7f9c3306",
+                                    "rows": [
+                                        {
+                                            "columns": [
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "7ed21f2b-e877-4c26-991b-a0c1ab990532",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "timeRange": "createDate",
+                                                                "title": "Mean Time For Eradication",
+                                                                "toDateField": "recoveryDate",
+                                                                "fromDateField": "eradicationDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "780d8c4f-0e5a-4e7a-86f6-0116284faf54",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "timeRange": "createDate",
+                                                                "title": "Mean Time For Recovery",
+                                                                "toDateField": "aftermathDate",
+                                                                "fromDateField": "recoveryDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                },
+                                                {
+                                                    "widgets": [
+                                                        {
+                                                            "type": "performanceMetrics",
+                                                            "config": {
+                                                                "wid": "c017e3b1-0b42-49e3-807c-8032a6701382",
+                                                                "includeFailedPlaybooks": true,
+                                                                "excludeConfigActions": true,
+                                                                "days": 7,
+                                                                "showPercentageChanges": true,
+                                                                "metricsType": "timeToX",
+                                                                "title": "Mean Time For Aftermath",
+                                                                "resource": "incidents",
+                                                                "query": {
+                                                                    "sort": [],
+                                                                    "limit": 30,
+                                                                    "logic": "AND",
+                                                                    "filters": [
+                                                                        {
+                                                                            "field": "tenant",
+                                                                            "operator": "eq",
+                                                                            "value": "{{tenant}}",
+                                                                            "_value": {
+                                                                                "display": "",
+                                                                                "itemValue": "",
+                                                                                "@id": "{{tenant}}"
+                                                                            },
+                                                                            "type": "object"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "opration": "mean",
+                                                                "toDateField": "resolveddate",
+                                                                "fromDateField": "aftermathDate",
+                                                                "timeRange": "createDate",
+                                                                "showSavings": "dollar",
+                                                                "grouping": {
+                                                                    "primary": [],
+                                                                    "secondary": []
+                                                                },
+                                                                "cardLayout": true
+                                                            }
+                                                        }
+                                                    ],
+                                                    "style": "col-lg-4"
+                                                }
+                                            ],
+                                            "wid": "26b8292f-3610-4659-b5ed-4bed991e12f9",
+                                            "container": true,
+                                            "_collapsed": false
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "style": "col-lg-6"
+                    }
+                ],
+                "wid": "4122274f-5f5d-4b93-a144-198d65973aad",
+                "container": true,
+                "_collapsed": false
+            },
+            {
+                "columns": [
+                    {
+                        "widgets": [],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [],
+                        "style": "col-lg-3"
+                    },
+                    {
+                        "widgets": [],
+                        "style": "col-lg-3"
+                    }
+                ],
+                "wid": "13f08341-eb74-4692-b737-bb68de873615",
+                "_collapsed": false
+            }
+        ],
+        "wid": "ec834d77-403b-4dfa-abda-719402adbb17"
+    },
+    "filterArray": [
+        {
+            "key": "tenant",
+            "open": true,
+            "type": "lookup",
+            "label": "Tenant",
+            "value": null,
+            "module": "tenants",
+            "required": true,
+            "expression": "{{tenant}}",
+            "defaultValue": null
+        }
+    ],
+    "updateDate": 1583387971
+}

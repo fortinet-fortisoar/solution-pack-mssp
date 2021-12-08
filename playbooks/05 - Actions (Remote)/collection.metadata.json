@@ -1,0 +1,15 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "05 - Actions (Remote)",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "ba2d4304-1002-40df-8e38-c9874656b517",
+    "id": 94,
+    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "createDate": 1638807723,
+    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+    "modifyDate": 1638807723,
+    "recordTags": []
+}
