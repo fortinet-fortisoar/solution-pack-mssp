@@ -24,7 +24,7 @@ Use the following procedure as a *root* user to deploy the solution pack:
 
 
 
-Once you have completed installing the MSSP IR Solution pack Pack, you can choose to import other Solution Packs (using the same steps mentioned above) based on your requirements:
+Once you have completed installing the MSSP IR Solution Pack, you can choose to import other Solution Packs (using the same steps mentioned above) based on your requirements:
 
 - [solution-pack-incident-response](https://github.com/fortinet-fortisoar/solution-pack-incident-response)
 - [solution-pack-mitre-attack](https://github.com/fortinet-fortisoar/solution-pack-mitre-attack)
