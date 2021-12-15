@@ -1,0 +1,17 @@
+{
+    "name": "multiTenancy",
+    "version": "1.0.0",
+    "display": "Multi Tenancy",
+    "description": "FortiSOAR Solution Pack for Multi-tenancy use-cases",
+    "category": [],
+    "dependencies": [],
+    "publisher": "Fortinet",
+    "certified": "true",
+    "type": "solutionpack",
+    "supportInfo": "",
+    "help":"https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy",
+    "tags": [],
+    "fsrCompatibility": [
+        "7.0.2"
+    ]
+}
