@@ -38,22 +38,13 @@ Once you have completed installing the MSSP IR Solution Pack, you can choose to 
        After the “Enable Remote Execution Flag (Tenant Only)” playbook is executed, you will notice that “Playbook Mappings” is added in “Remote Tenant Manager” under “Multitenancy Section” on the Master node.  
         ![Manage Playbook Mapping](media/managePbMappings.png)
 
-2. Map Aliases of remote actions playbooks on the Master node by executing the “Remote Alias Mapping (MasterOnly)” playbook as follows:
+2. Map Aliases of remote actions playbooks on the Master node by executing the “Remote Alias Mapping (Master)” playbook as follows:
     1. From the navigation panel,click the **Alerts** module.
-    2. Click **Execute** and then select **RemoteAlias Mapping (Master Only)**.
+    2. Click **Execute** and then select **Remote Alias Mapping (Master Only)**.
 
-3. Click **System Settings** and in the “Application Editor” section, click **Modules** to modify the record uniqueness in the mmd for various modules as follows:
-      1.    For the Alerts and Incidents modules, add `SourceID` and `Tenant` fields in the “Record Uniqueness” section.
-            ![Alerts Module - Adding Record Uniqueness](media/alertRecordUniqueness.png)
+3. Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.  
 
-      2.    For the Indicator module, add `Type`, `Value`, and `Tenant` fields in the “Record Uniqueness” section.   
-         ![Indicator Module - Adding Record Uniqueness](media/indicatorRecordUniqueness.png)
-
-      3.    For the SLA module, add `Severity` and `Tenant` fields in the “Record Uniqueness” section.  
-         ![SLA Module - Adding Record Uniqueness](media/slaRecordUniqueness.png)
-
-4. Disable SLA Playbooks from the *08 - Case Management* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.  
       ![Disabling SLA Playbooks](media/disbaleSLAPbs.png)
 
-5. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.  
+4. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master.  
    ![Adding SLA Templates](media/addSLATemplates.png)
