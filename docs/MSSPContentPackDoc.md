@@ -6,7 +6,7 @@ This article describes the FortiSOAR™ Incident Response Solution Pack (solutio
 
 ## Deploying MSSP IR Solution Pack
 
-**Important**: Before you deploy the solution pack, ensure that you have installed FortiSOAR™ and there are no records such as alerts, indicators, incidents, etc., in your FortiSOAR™ system.
+**Important**: Before you deploy the solution pack, ensure that you have deployed the FortiSOAR™ Incident Response Solution Pack ([solution-pack-incident-response](https://github.com/fortinet-fortisoar/solution-pack-incident-response)) and there are no records such as alerts, indicators, incidents, etc., in your FortiSOAR™ system.
 
 1. Log onto the Solution Pack GIT repo ([https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy](https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy)) using your credentials.
 2. Click the **Code** button and select the **Download ZIP** option.  
@@ -22,7 +22,6 @@ This article describes the FortiSOAR™ Incident Response Solution Pack (solutio
 
 Once you have completed installing the MSSP IR Solution Pack, you can choose to import other Solution Packs (using the same steps mentioned above) based on your requirements:
 
-- [solution-pack-incident-response](https://github.com/fortinet-fortisoar/solution-pack-incident-response)
 - [solution-pack-mitre-attack](https://github.com/fortinet-fortisoar/solution-pack-mitre-attack)
 - [solution-pack-symantec-solutions](https://github.com/fortinet-fortisoar/solution-pack-symantec-solutions)
 - [solution-pack-knowledge-base](https://github.com/fortinet-fortisoar/solution-pack-knowledge-base)
@@ -31,8 +30,8 @@ Once you have completed installing the MSSP IR Solution Pack, you can choose to 
 
 ## Configuring MSSP IR Solution Pack
 
-1. Enable the remote execution flag for all the playbooks in *05-Actions* collection on the Tenant systems by executing the “Enable Remote Execution Flag(Tenant Only)” playbook as follows:
-    1. Open the FortiSOAR instance,and from the navigation panel, click the **Alerts** module.
+1. Enable the remote execution flag for all the playbooks in *05-Actions (Remote)* collection on the Tenant systems by executing the “Enable Remote Execution Flag(Tenant Only)” playbook as follows:
+    1. Open the FortiSOAR Tenant instance,and from the navigation panel, click the **Alerts** module.
     2. Click **Execute** and then select **Enable Remote Execution Flag (Tenant Only)**.  
        **Important**: Before you execute the “Enable Remote Execution Flag (Tenant Only)” playbook, ensure that there is no “Playbook Mappings” in “Remote Tenant Manager” under “Multitenancy Section” on the Master node.   
         ![Remote Tenant Manager](media/remoteTenantMngr.png)  
