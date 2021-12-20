@@ -4,17 +4,17 @@
     "name": "Remote Action - Host - Isolate Host",
     "aliasName": null,
     "tag": null,
-    "description": "Isolate Host indicator at tenant",
+    "description": "Isolates indicators of type 'Host' and marks the indicator as \"Isolated\" based on its block status on Tenant.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1638807722,
-    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "lastModifyDate": 1639990168,
+    "collection": "\/api\/3\/workflow_collections\/4130b66b-8b32-44e8-aec4-7a3e897a92f8",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/0f9e75b5-c5eb-42c7-8195-b8be9d840987",
+    "triggerStep": "\/api\/3\/workflow_steps\/23bbf10b-ca6a-4ebf-aaa1-d49cd679de2f",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -104,8 +104,8 @@
             "top": "30",
             "left": "300",
             "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-            "uuid": "0f9e75b5-c5eb-42c7-8195-b8be9d840987",
-            "id": 4456
+            "uuid": "23bbf10b-ca6a-4ebf-aaa1-d49cd679de2f",
+            "id": 2895
         },
         {
             "@type": "WorkflowStep",
@@ -130,8 +130,8 @@
             "top": "280",
             "left": "480",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "b751f77d-8fbf-43d8-a16e-f2bdae53a286",
-            "id": 4457
+            "uuid": "d100964d-b680-4747-8730-3a36642e5e81",
+            "id": 2896
         },
         {
             "@type": "WorkflowStep",
@@ -140,14 +140,14 @@
             "arguments": {
                 "tenant_id": "",
                 "step_variables": [],
-                "playbook_alias_id": "9c63f71b-e66e-4c1b-a7dc-d69244fdef39"
+                "playbook_alias_id": "cf73d103-499a-4192-aa4b-14b1ec7fe700"
             },
             "status": null,
             "top": "414",
             "left": "120",
             "stepType": "\/api\/3\/workflow_step_types\/ab3b2e02-5e77-4ed6-8ebd-580f390063a5",
-            "uuid": "ffac84e6-7c3a-435f-a24d-4424cdc8f062",
-            "id": 4458
+            "uuid": "75119ba0-bac9-43e9-b0cb-b78ca47fa6d9",
+            "id": 2897
         },
         {
             "@type": "WorkflowStep",
@@ -157,19 +157,19 @@
                 "conditions": [
                     {
                         "option": "No",
-                        "step_iri": "\/api\/3\/workflow_steps\/b751f77d-8fbf-43d8-a16e-f2bdae53a286",
+                        "step_iri": "\/api\/3\/workflow_steps\/d100964d-b680-4747-8730-3a36642e5e81",
                         "condition": "{{ (vars.input.records[0].tenant.isDedicated == true) and (vars.input.records[0].tenant.role == 'self') }}",
                         "step_name": "No Operation"
                     },
                     {
                         "option": "No",
-                        "step_iri": "\/api\/3\/workflow_steps\/b751f77d-8fbf-43d8-a16e-f2bdae53a286",
+                        "step_iri": "\/api\/3\/workflow_steps\/d100964d-b680-4747-8730-3a36642e5e81",
                         "condition": "{{ vars.input.records[0].tenant.isDedicated == false }}",
                         "step_name": "No Operation"
                     },
                     {
                         "option": "Yes",
-                        "step_iri": "\/api\/3\/workflow_steps\/186c4494-31e5-48b4-ac41-4b0a96047f5c",
+                        "step_iri": "\/api\/3\/workflow_steps\/64600994-1f5b-4424-841c-b94489f1f175",
                         "condition": "{{ (vars.input.records[0].tenant.isDedicated == true) and (vars.input.records[0].tenant.role != 'self') }}",
                         "step_name": "Configuration"
                     }
@@ -179,8 +179,8 @@
             "top": "160",
             "left": "300",
             "stepType": "\/api\/3\/workflow_step_types\/12254cf5-5db7-4b1a-8cb1-3af081924b28",
-            "uuid": "23a11b1f-0223-4d9f-8f51-df29092f4ac9",
-            "id": 4459
+            "uuid": "1fbc4bfe-f8ca-4048-89f0-a40e47c3e64e",
+            "id": 2898
         },
         {
             "@type": "WorkflowStep",
@@ -193,46 +193,46 @@
             "top": "280",
             "left": "120",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "186c4494-31e5-48b4-ac41-4b0a96047f5c",
-            "id": 4460
+            "uuid": "64600994-1f5b-4424-841c-b94489f1f175",
+            "id": 2899
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Is tenant is dedicated",
-            "targetStep": "\/api\/3\/workflow_steps\/23a11b1f-0223-4d9f-8f51-df29092f4ac9",
-            "sourceStep": "\/api\/3\/workflow_steps\/0f9e75b5-c5eb-42c7-8195-b8be9d840987",
+            "targetStep": "\/api\/3\/workflow_steps\/1fbc4bfe-f8ca-4048-89f0-a40e47c3e64e",
+            "sourceStep": "\/api\/3\/workflow_steps\/23bbf10b-ca6a-4ebf-aaa1-d49cd679de2f",
             "label": null,
             "isExecuted": false,
-            "uuid": "ead25709-26da-4c0e-83d1-9517355bb3e1"
+            "uuid": "881926dd-2c97-498f-9988-fb78d1996542"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Configuration -> Isolate Host indicator",
-            "targetStep": "\/api\/3\/workflow_steps\/ffac84e6-7c3a-435f-a24d-4424cdc8f062",
-            "sourceStep": "\/api\/3\/workflow_steps\/186c4494-31e5-48b4-ac41-4b0a96047f5c",
+            "targetStep": "\/api\/3\/workflow_steps\/75119ba0-bac9-43e9-b0cb-b78ca47fa6d9",
+            "sourceStep": "\/api\/3\/workflow_steps\/64600994-1f5b-4424-841c-b94489f1f175",
             "label": null,
             "isExecuted": false,
-            "uuid": "7008aae6-57c3-4b0b-903c-912381b6d780"
+            "uuid": "5df28706-99de-4601-b9eb-3fb54eb60e20"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Is tenant is dedicated -> No Opration",
-            "targetStep": "\/api\/3\/workflow_steps\/b751f77d-8fbf-43d8-a16e-f2bdae53a286",
-            "sourceStep": "\/api\/3\/workflow_steps\/23a11b1f-0223-4d9f-8f51-df29092f4ac9",
+            "targetStep": "\/api\/3\/workflow_steps\/d100964d-b680-4747-8730-3a36642e5e81",
+            "sourceStep": "\/api\/3\/workflow_steps\/1fbc4bfe-f8ca-4048-89f0-a40e47c3e64e",
             "label": "No",
             "isExecuted": false,
-            "uuid": "93fdd30a-c66d-4392-9d11-66647e09590b"
+            "uuid": "a90c3dbf-0271-4d11-a80c-47615783b838"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Is tenant is dedicated -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/186c4494-31e5-48b4-ac41-4b0a96047f5c",
-            "sourceStep": "\/api\/3\/workflow_steps\/23a11b1f-0223-4d9f-8f51-df29092f4ac9",
+            "targetStep": "\/api\/3\/workflow_steps\/64600994-1f5b-4424-841c-b94489f1f175",
+            "sourceStep": "\/api\/3\/workflow_steps\/1fbc4bfe-f8ca-4048-89f0-a40e47c3e64e",
             "label": "Yes",
             "isExecuted": false,
-            "uuid": "43eb66e6-7218-4ba8-9ec2-f15023ec9ef6"
+            "uuid": "67dcbfa5-5411-45b8-a5ed-8608caf5c3d2"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
@@ -241,11 +241,11 @@
         "ManualTrigger",
         "RemoteAction"
     ],
-    "id": 1142,
+    "id": 530,
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1638807723,
+    "createDate": 1639637474,
     "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1638807723,
+    "modifyDate": 1639990168,
     "owners": [],
     "isPrivate": false
 }
