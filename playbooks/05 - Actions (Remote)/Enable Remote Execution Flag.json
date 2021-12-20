@@ -11,10 +11,10 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1638807722,
-    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "lastModifyDate": 1639637467,
+    "collection": "\/api\/3\/workflow_collections\/4130b66b-8b32-44e8-aec4-7a3e897a92f8",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
+    "triggerStep": "\/api\/3\/workflow_steps\/3b75aa81-11ff-4dfa-9ceb-2906ae31be6b",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -40,8 +40,8 @@
             "top": "435",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "89869fad-268e-4b4f-a227-e718bdb110db",
-            "id": 4407
+            "uuid": "ee627964-f5b8-4de6-815b-666ea7c7dae7",
+            "id": 2846
         },
         {
             "@type": "WorkflowStep",
@@ -67,8 +67,8 @@
             "top": "30",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-            "uuid": "d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
-            "id": 4408
+            "uuid": "3b75aa81-11ff-4dfa-9ceb-2906ae31be6b",
+            "id": 2847
         },
         {
             "@type": "WorkflowStep",
@@ -81,8 +81,8 @@
             "top": "165",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "2c253956-ba1a-4efa-acd8-47dc44589b4a",
-            "id": 4409
+            "uuid": "4865abe4-5c00-40f0-aba0-1d1a9742e2d8",
+            "id": 2848
         },
         {
             "@type": "WorkflowStep",
@@ -108,47 +108,47 @@
             "top": "300",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
-            "id": 4410
+            "uuid": "df9f33f4-2df3-44e9-8daa-8a8eb6490504",
+            "id": 2849
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Disable Remote Reference Flag -> Enable Remote Reference Flag",
-            "targetStep": "\/api\/3\/workflow_steps\/89869fad-268e-4b4f-a227-e718bdb110db",
-            "sourceStep": "\/api\/3\/workflow_steps\/812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
+            "targetStep": "\/api\/3\/workflow_steps\/ee627964-f5b8-4de6-815b-666ea7c7dae7",
+            "sourceStep": "\/api\/3\/workflow_steps\/df9f33f4-2df3-44e9-8daa-8a8eb6490504",
             "label": null,
             "isExecuted": false,
-            "uuid": "db1f8032-e873-455c-b5ee-0209da1024da"
+            "uuid": "628487f2-d7bb-487e-92d0-973dd1f96988"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/2c253956-ba1a-4efa-acd8-47dc44589b4a",
-            "sourceStep": "\/api\/3\/workflow_steps\/d686eb6b-9fa3-44d4-83c5-21a2a8decd6f",
+            "targetStep": "\/api\/3\/workflow_steps\/4865abe4-5c00-40f0-aba0-1d1a9742e2d8",
+            "sourceStep": "\/api\/3\/workflow_steps\/3b75aa81-11ff-4dfa-9ceb-2906ae31be6b",
             "label": null,
             "isExecuted": false,
-            "uuid": "72d17fd9-1c01-485d-ab4d-22bca7a6ffc5"
+            "uuid": "2ac11307-d816-4bae-b019-6b76e4958ab4"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Configuration -> Get Remote Reference playbooks",
-            "targetStep": "\/api\/3\/workflow_steps\/812e1f4e-98d8-4497-8bfb-4f49ea4d7c92",
-            "sourceStep": "\/api\/3\/workflow_steps\/2c253956-ba1a-4efa-acd8-47dc44589b4a",
+            "targetStep": "\/api\/3\/workflow_steps\/df9f33f4-2df3-44e9-8daa-8a8eb6490504",
+            "sourceStep": "\/api\/3\/workflow_steps\/4865abe4-5c00-40f0-aba0-1d1a9742e2d8",
             "label": null,
             "isExecuted": false,
-            "uuid": "9c0e22b1-fcc9-4894-918d-bccbf439b9bf"
+            "uuid": "5dc63698-2418-4e9d-bd80-04a0d4450d7e"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "35757a7c-f02b-4a25-bc63-06c75def664c",
     "recordTags": [],
-    "id": 1132,
+    "id": 520,
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1638807723,
+    "createDate": 1639637468,
     "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1638807723,
+    "modifyDate": 1639637468,
     "owners": [],
     "isPrivate": false
 }

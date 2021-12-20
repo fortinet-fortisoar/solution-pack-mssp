@@ -11,10 +11,10 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1638807722,
-    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "lastModifyDate": 1639989420,
+    "collection": "\/api\/3\/workflow_collections\/4130b66b-8b32-44e8-aec4-7a3e897a92f8",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/691d9664-4c0f-4921-9f8e-85f324cc2ea9",
+    "triggerStep": "\/api\/3\/workflow_steps\/412c0967-e975-4cd4-8ba9-54f096cacc94",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -40,8 +40,8 @@
             "top": "435",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
-            "id": 4400
+            "uuid": "7bddcff4-adc7-4b44-a003-1b4a2c8c41ec",
+            "id": 2839
         },
         {
             "@type": "WorkflowStep",
@@ -63,8 +63,8 @@
             "top": "840",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
-            "uuid": "b90e9b3c-2472-4f76-ab1c-dc26ba751018",
-            "id": 4401
+            "uuid": "e60ce16c-665e-405e-98bc-34c98b71ecfb",
+            "id": 2840
         },
         {
             "@type": "WorkflowStep",
@@ -91,8 +91,8 @@
             "top": "30",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-            "uuid": "691d9664-4c0f-4921-9f8e-85f324cc2ea9",
-            "id": 4402
+            "uuid": "412c0967-e975-4cd4-8ba9-54f096cacc94",
+            "id": 2841
         },
         {
             "@type": "WorkflowStep",
@@ -105,8 +105,8 @@
             "top": "570",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "22b44605-fb51-4a1c-b716-152d9a63fb9f",
-            "id": 4403
+            "uuid": "b4cfc28f-6df7-4e5d-81c9-149a21bd8d5d",
+            "id": 2842
         },
         {
             "@type": "WorkflowStep",
@@ -119,8 +119,8 @@
             "top": "705",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "e4a4374b-2078-4f59-8394-f7d94edff413",
-            "id": 4404
+            "uuid": "bec7b3a3-da73-4500-9c0a-dcc75fd58782",
+            "id": 2843
         },
         {
             "@type": "WorkflowStep",
@@ -133,8 +133,8 @@
             "top": "165",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "uuid": "b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
-            "id": 4405
+            "uuid": "8d301274-77b3-455e-a2a2-922384609868",
+            "id": 2844
         },
         {
             "@type": "WorkflowStep",
@@ -156,74 +156,74 @@
             "top": "300",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "b7f5a9ad-7642-4dc3-be33-9d263498d435",
-            "id": 4406
+            "uuid": "bbf6c726-b9f2-4cd7-a12a-014b37698d32",
+            "id": 2845
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Remove stepType -> Update All playbooks",
-            "targetStep": "\/api\/3\/workflow_steps\/b90e9b3c-2472-4f76-ab1c-dc26ba751018",
-            "sourceStep": "\/api\/3\/workflow_steps\/e4a4374b-2078-4f59-8394-f7d94edff413",
+            "targetStep": "\/api\/3\/workflow_steps\/e60ce16c-665e-405e-98bc-34c98b71ecfb",
+            "sourceStep": "\/api\/3\/workflow_steps\/bec7b3a3-da73-4500-9c0a-dcc75fd58782",
             "label": null,
             "isExecuted": false,
-            "uuid": "2f7385b3-8698-4086-84e2-d2d2a39b244d"
+            "uuid": "fb203932-404c-478f-b06c-fd5e916cedeb"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Get All Alias -> Get Playbook",
-            "targetStep": "\/api\/3\/workflow_steps\/8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
-            "sourceStep": "\/api\/3\/workflow_steps\/b7f5a9ad-7642-4dc3-be33-9d263498d435",
+            "targetStep": "\/api\/3\/workflow_steps\/7bddcff4-adc7-4b44-a003-1b4a2c8c41ec",
+            "sourceStep": "\/api\/3\/workflow_steps\/bbf6c726-b9f2-4cd7-a12a-014b37698d32",
             "label": null,
             "isExecuted": false,
-            "uuid": "b1555feb-39fb-438e-8115-24df70033829"
+            "uuid": "fdde4eac-fe30-4023-a99a-152ea9bf392b"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Configuration -> Get All Alias",
-            "targetStep": "\/api\/3\/workflow_steps\/b7f5a9ad-7642-4dc3-be33-9d263498d435",
-            "sourceStep": "\/api\/3\/workflow_steps\/b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
+            "targetStep": "\/api\/3\/workflow_steps\/bbf6c726-b9f2-4cd7-a12a-014b37698d32",
+            "sourceStep": "\/api\/3\/workflow_steps\/8d301274-77b3-455e-a2a2-922384609868",
             "label": null,
             "isExecuted": false,
-            "uuid": "190c886a-8ff7-4599-9a6e-ca16577dde82"
+            "uuid": "8d90c04b-9160-45cf-83a1-1f2a379fad9d"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Update alias id -> Remove stepType",
-            "targetStep": "\/api\/3\/workflow_steps\/e4a4374b-2078-4f59-8394-f7d94edff413",
-            "sourceStep": "\/api\/3\/workflow_steps\/22b44605-fb51-4a1c-b716-152d9a63fb9f",
+            "targetStep": "\/api\/3\/workflow_steps\/bec7b3a3-da73-4500-9c0a-dcc75fd58782",
+            "sourceStep": "\/api\/3\/workflow_steps\/b4cfc28f-6df7-4e5d-81c9-149a21bd8d5d",
             "label": null,
             "isExecuted": false,
-            "uuid": "83f7894f-c272-4431-b697-e1be35efc141"
+            "uuid": "6ff0b816-9856-4679-9ae7-279791fe2a02"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/b62ff7a6-8a58-4d22-ba56-55a422fbc5e3",
-            "sourceStep": "\/api\/3\/workflow_steps\/691d9664-4c0f-4921-9f8e-85f324cc2ea9",
+            "targetStep": "\/api\/3\/workflow_steps\/8d301274-77b3-455e-a2a2-922384609868",
+            "sourceStep": "\/api\/3\/workflow_steps\/412c0967-e975-4cd4-8ba9-54f096cacc94",
             "label": null,
             "isExecuted": false,
-            "uuid": "32895426-7e88-4bd8-b82e-cbf65eed2635"
+            "uuid": "14f7ec26-8ea0-4fbd-8f40-21bc157a076a"
         },
         {
             "@type": "WorkflowRoute",
             "name": "Get Remote Actions Playbook Collection -> Update Alias ID",
-            "targetStep": "\/api\/3\/workflow_steps\/22b44605-fb51-4a1c-b716-152d9a63fb9f",
-            "sourceStep": "\/api\/3\/workflow_steps\/8dacc645-d2ed-4d9f-9703-1624b7d0dc8f",
+            "targetStep": "\/api\/3\/workflow_steps\/b4cfc28f-6df7-4e5d-81c9-149a21bd8d5d",
+            "sourceStep": "\/api\/3\/workflow_steps\/7bddcff4-adc7-4b44-a003-1b4a2c8c41ec",
             "label": null,
             "isExecuted": false,
-            "uuid": "14eafe07-c6b9-4ac7-a86d-4c50eee28f9f"
+            "uuid": "142101ee-3cb1-4a87-91cb-1f87dd2a3aa8"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "12d7b0f7-4432-47e6-85ed-c52821edd594",
     "recordTags": [],
-    "id": 1131,
+    "id": 519,
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1638807723,
+    "createDate": 1639637467,
     "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1638807723,
+    "modifyDate": 1639989420,
     "owners": [],
     "isPrivate": false
 }
