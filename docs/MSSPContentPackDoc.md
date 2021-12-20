@@ -1,4 +1,4 @@
-# Multi-tenancy Incident Response Solution Pack 7.0.2
+# Multi-tenancy Incident Response Solution Pack v1.0.0
 
 ## Overview
 
