@@ -4,7 +4,7 @@
     "name": "Alias Mapping - Update Playbook",
     "aliasName": null,
     "tag": null,
-    "description": null,
+    "description": "This is a subroutine playbook to update the playbook with alias",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -13,10 +13,10 @@
         "playbook_body"
     ],
     "synchronous": false,
-    "lastModifyDate": 1638947144,
-    "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
+    "lastModifyDate": 1639989503,
+    "collection": "\/api\/3\/workflow_collections\/4130b66b-8b32-44e8-aec4-7a3e897a92f8",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/96f9b314-c033-48b7-84d6-e6b307132bd0",
+    "triggerStep": "\/api\/3\/workflow_steps\/24eff263-f98d-4f7d-98b8-5b0a7626e261",
     "steps": [
         {
             "@type": "WorkflowStep",
@@ -38,8 +38,8 @@
             "top": "165",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-            "uuid": "d7328014-1809-4a91-a73a-cffbb2e6f002",
-            "id": 4398
+            "uuid": "7bcf6d84-60c0-43a4-a8ba-2c622e874d3f",
+            "id": 2835
         },
         {
             "@type": "WorkflowStep",
@@ -56,29 +56,29 @@
             "top": "30",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-            "uuid": "96f9b314-c033-48b7-84d6-e6b307132bd0",
-            "id": 4399
+            "uuid": "24eff263-f98d-4f7d-98b8-5b0a7626e261",
+            "id": 2836
         }
     ],
     "routes": [
         {
             "@type": "WorkflowRoute",
             "name": "Start -> Copy  of Get Playbook",
-            "targetStep": "\/api\/3\/workflow_steps\/d7328014-1809-4a91-a73a-cffbb2e6f002",
-            "sourceStep": "\/api\/3\/workflow_steps\/96f9b314-c033-48b7-84d6-e6b307132bd0",
+            "targetStep": "\/api\/3\/workflow_steps\/7bcf6d84-60c0-43a4-a8ba-2c622e874d3f",
+            "sourceStep": "\/api\/3\/workflow_steps\/24eff263-f98d-4f7d-98b8-5b0a7626e261",
             "label": null,
             "isExecuted": false,
-            "uuid": "70729118-f9e7-44af-bd25-659192b61b52"
+            "uuid": "4830ec99-a0c9-4d17-a002-009581cb205d"
         }
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "a04203de-430b-4426-9250-0843c3f7ec42",
     "recordTags": [],
-    "id": 1130,
+    "id": 517,
     "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1638807723,
+    "createDate": 1639635436,
     "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1638947143,
+    "modifyDate": 1639989502,
     "owners": [],
     "isPrivate": false
 }
