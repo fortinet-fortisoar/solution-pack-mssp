@@ -10,3 +10,5 @@ The FortiSOAR™ Incident Response Solution Pack (solution-pack-multi-tenancy) f
 
 The steps for deploying a solution pack are mentioned in the [Deploying a Solution Pack](https://github.com/fortinet-fortisoar/how-tos/blob/main/DeployingASolutionPack.md) article.  
 **Important**: You must import the solution pack zip on both the 'Master' and the 'Tenant' nodes.
+
+More information about the Multi-Tenancy Solution Pack can be found [here](https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy/blob/develop/docs/MSSPContentPackDoc.md).
