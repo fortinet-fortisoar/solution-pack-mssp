@@ -22,7 +22,7 @@
             "description": null,
             "arguments": {
                 "route": "0c4df1f0-b347-447e-8df2-1ec844b18c14",
-                "title": "Block IP Address",
+                "title": "Remote Block Email Address",
                 "resources": [
                     "indicators"
                 ],
