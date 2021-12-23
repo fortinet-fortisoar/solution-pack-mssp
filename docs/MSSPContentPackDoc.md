@@ -4,6 +4,11 @@
 
 This article describes the FortiSOAR™ Incident Response Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture.
 
+## Prerequisites
+
+- Deploy the MSSP IR Solution Pack. However, before you deploy the MSSP IR Solution Pack, ensure that you have deployed the FortiSOAR™ Incident Response Solution Pack ([solution-pack-incident-response](https://github.com/fortinet-fortisoar/solution-pack-incident-response)). The steps for deploying a solution pack are mentioned in the [Deploying a Solution Pack](https://github.com/fortinet-fortisoar/how-tos/blob/main/DeployingASolutionPack.md) article.  
+  **Important**: You must import the MSSP IR solution pack zip on both the 'Master' and the 'Tenant' nodes.
+
 
 Once you have completed installing the MSSP IR Solution Pack, you can choose to import other Solution Packs (using the same steps mentioned in the "Deploying a Solution Pack article") based on your requirements:
 
