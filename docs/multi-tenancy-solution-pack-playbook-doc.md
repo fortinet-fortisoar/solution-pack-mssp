@@ -1,4 +1,4 @@
-# FortiSOAR Multi Tenancy Solution Pack – Out-of-the box Playbooks Collections
+# FortiSOAR Multi Tenancy Solution Pack - Out-of-the box Playbooks Collections
 
 The FortiSOAR™ Incident Response Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture. 
 This article provides a listing and brief description of the various types of playbook collections included in the Solution Pack. You can use the playbooks to perform various operations used to automate security processes across your organization.
@@ -27,6 +27,5 @@ Following is a table that lists the playbooks that are a part of the “05-Actio
 |14|Remote Action - Host - Unblock (Indicator)|Unblocks indicators of type 'Host' on the firewall and marks the indicators as "Unblocked" based on their block status on Tenant.|
 |15|Remote Action - IP Address - Block (Indicator)|Blocks indicators of type 'IP Address' on the firewall and marks the indicators as "Blocked" based on their block status on Tenant.|
 |16|Remote Action - IP Address - Unblock (Indicator)|Unblocks indicators of type 'IP Address' on the firewall and marks the indicator as "Unblocked" based on their block status on Tenant.|
-|17|Remote Action - URL - Block (Indicator)|Blocks indicators of type ‘URL’ on the firewall and marks the indicators as “Blocked” based on their block status on Tenant.|
-|` `18|Remote Action - URL - Unblock (Indicator)|Unblocks indicators of type 'URL' on the firewall and marks the indicators as "Unblocked" based on their block status on Tenant.|
-
+|17|Remote Action - URL - Block (Indicator)|Blocks indicators of type 'URL' on the firewall and marks the indicators as “Blocked” based on their block status on Tenant.|
+|18|Remote Action - URL - Unblock (Indicator)|Unblocks indicators of type 'URL' on the firewall and marks the indicators as "Unblocked" based on their block status on Tenant.|
