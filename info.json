@@ -1,15 +1,60 @@
 {
     "name": "multiTenancy",
     "version": "1.0.0",
+    "type": "solutionpack",
+    "local": false,
     "label": "Multi Tenancy",
-    "description": "FortiSOAR Solution Pack for Multi Tenancy Use Cases",
+    "dependencies": [
+        {
+            "name": "fortiSOAREssentials",
+            "type": "solutionpack",
+            "label": "FortiSOAR Essentials"
+        },
+        {
+            "name": "socSimulator",
+            "type": "solutionpack",
+            "label": "SOC Simulator"
+        }
+    ],
+    "prerequisite": [],
     "category": [],
-    "dependencies": [],
+    "tags": [],
     "publisher": "Fortinet",
     "certified": "true",
-    "type": "multiContent",
     "supportInfo": "support@fortinet.com",
-    "help":"https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy",
-    "tags": [],
-    "fsrMinCompatibility": "7.0.2"
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-incident-response/blob/develop/README.md",
+    "description": "FortiSOAR Solution Pack for Multi Tenancy Use Cases",
+    "fsrMinCompatibility": "7.2.0",
+    "date": "2022-02-11T16:40:13+00:00",
+    "exported_from": "master.fortisoar.com",
+    "exported_by": "CS Admin",
+    "contents": {
+        "playbooks": [
+            {
+                "name": "05 - Actions (Remote)"
+            }
+        ],
+        "reports": [
+            {
+                "name": "Tenant Overdue Alerts Activities"
+            },
+            {
+                "name": "Tenant Overdue Incidents Activities"
+            },
+            {
+                "name": "Tenant Weekly Alert Report"
+            },
+            {
+                "name": "Tenant Weekly Incident Report"
+            }
+        ],
+        "dashboards": [
+            {
+                "name": "MSSP Overview"
+            },
+            {
+                "name": "Tenant Overview"
+            }
+        ]
+    }
 }
