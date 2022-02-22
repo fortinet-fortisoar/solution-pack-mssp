@@ -1,32 +1,31 @@
 {
-    "name": "multiTenancy",
-    "version": "1.0.0",
+    "name": "multiTenancyAddons",
+    "version": "1.0.1",
     "type": "solutionpack",
-    "local": false,
-    "label": "Multi Tenancy",
+    "local": true,
+    "label": "Multi Tenancy Addons",
     "dependencies": [
         {
-            "name": "fortiSOAREssentials",
+            "name": "sOARFramework",
             "type": "solutionpack",
-            "label": "FortiSOAR Essentials"
-        },
-        {
-            "name": "socSimulator",
-            "type": "solutionpack",
-            "label": "SOC Simulator"
+            "label": "SOAR Framework",
+            "version": "1.0.0",
+            "minVersion": null
         }
     ],
     "prerequisite": [],
-    "category": [],
-    "tags": [],
     "publisher": "Fortinet",
-    "certified": "true",
+    "description": "This solution pack enables users to experience the power and capability of FortiSOAR\u2122 incident response in a multi-tenant architecture.",
+    "summary": null,
+    "help": "https:\/\/github.com\/fortinet-fortisoar\/solution-pack-multi-tenancy\/blob\/develop\/README.md",
+    "category": [],
     "supportInfo": "support@fortinet.com",
-    "help": "https://github.com/fortinet-fortisoar/solution-pack-incident-response/blob/develop/README.md",
-    "description": "FortiSOAR Solution Pack for Multi Tenancy Use Cases",
+    "certified": "true",
+    "iconLarge": null,
+    "recordTags": [],
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-02-11T16:40:13+00:00",
-    "exported_from": "master.fortisoar.com",
+    "date": "2022-02-22T19:21:19+00:00",
+    "exported_from": "tenant.fortisoar.in",
     "exported_by": "CS Admin",
     "contents": {
         "playbooks": [
@@ -55,6 +54,7 @@
             {
                 "name": "Tenant Overview"
             }
-        ]
+        ],
+        "recordSets": []
     }
 }
