@@ -1,7 +1,7 @@
 {
     "@context": "\/api\/3\/contexts\/WorkflowCollection",
     "@type": "WorkflowCollection",
-    "name": "05 - Actions (Remote)",
+    "name": "04 - Actions (Remote)",
     "description": null,
     "visible": true,
     "image": null,
