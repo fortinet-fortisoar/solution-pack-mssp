@@ -11,7 +11,6 @@
     "remoteExecutableFlag": false,
     "parameters": [],
     "synchronous": false,
-    "lastModifyDate": 1645545843,
     "collection": "\/api\/3\/workflow_collections\/ba2d4304-1002-40df-8e38-c9874656b517",
     "versions": [],
     "triggerStep": "\/api\/3\/workflow_steps\/4a8deff4-d3a9-4faa-9889-31a326894ae1",
@@ -232,16 +231,11 @@
     ],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "3943fbfb-ceb8-4a30-a4eb-1479ef6ca13e",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
     "recordTags": [
         "ManualTrigger",
         "RemoteAction"
-    ],
-    "id": "76",
-    "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "createDate": 1645545843.703458,
-    "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-    "modifyDate": 1645545843.703458,
-    "owners": [],
-    "isPrivate": false,
-    "deletedAt": null
+    ]
 }
