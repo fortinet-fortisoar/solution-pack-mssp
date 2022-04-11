@@ -13,19 +13,16 @@
             "minVersion": null
         }
     ],
-    "prerequisite": "This Solution Pack will enable the Alerts, Incidents and Indicators modules for data replication to the master\/tenant nodes.",
+    "prerequisite": "This Solution Pack will enable the Alerts, Incidents and Indicators modules for data replication to the master/tenant nodes.",
     "publisher": "Fortinet",
     "description": "This solution pack enables users to experience the power and capability of FortiSOAR\u2122 incident response in a multi-tenant architecture.",
-    "summary": null,
-    "help": "https:\/\/github.com\/fortinet-fortisoar\/solution-pack-multi-tenancy\/blob\/develop\/README.md",
+    "help": "https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy/blob/develop/README.md",
     "category": [],
-    "supportInfo": "support@fortinet.com",
-    "certified": "true",
+    "supportInfo": "Fortinet Customer Support",
     "iconLarge": null,
+    "certified": "true",
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-02-22T19:21:19+00:00",
-    "exported_from": "tenant.fortisoar.in",
-    "exported_by": "CS Admin",
+    "date": "2022-04-11T06:35:13+00:00",
     "contents": {
         "playbooks": [
             {
@@ -53,7 +50,6 @@
             {
                 "name": "Tenant Overview"
             }
-        ],
-        "recordSets": []
+        ]
     }
 }
