@@ -13,7 +13,7 @@
 
 3. Disable SLA Playbooks from the *"06 - IRP - Case Management"* collection on the Tenant (“SLA” keyword). This is required because, SLA operations on all records, i.e. records of Master or Tenant, get performed on the Master only.  
 
-      ![Disabling SLA Playbooks](media/disbaleSLAPbs.png)
+      ![Disabling SLA Playbooks](media/disableSLAPbs.png)
 
 4. Define Tenant SLA by adding SLA records for the Tenant in the “SLA Templates” module on the Master instance.  
    ![Adding SLA Templates](media/addSLATemplates.png)
