@@ -1,4 +1,4 @@
-# Multi Tenancy Addons Solution Pack v1.0.1
+# Multi Tenancy Addons Solution Pack
 
 ## Overview
 ### Introduction
@@ -8,6 +8,12 @@ This solution pack performs various mitigation operations on tenants from the ma
 To achieve this, Enable the Remote Execution Flag on the tenant node, which will add “Playbook Mappings” in the “Remote Tenant Manager” tab under “Multitenancy Section” on the Master node, then Map Aliases of remote actions playbooks on the Master node.
 ### Usage 
 More information about usage/Configuring of Multi Tenancy Addons Solution Pack [here](https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy/blob/develop/docs/solution-pack-guide.md).
+
+## Version Information
+- Solution Pack Version: 1.0.1
+- FortiSOAR™ Version Tested on: 7.2.0
+- Authored By: Fortinet
+- Certified: Yes
 
 ## Prerequisites
 - Deploy the Multi Tenancy Addons Solution Pack. However, before you deploy the Multi Tenancy Addons Solution Pack, ensure that you have to deployed the SOAR Framework Solution Pack ([solution-pack-soar-framework](https://github.com/fortinet-fortisoar/solution-pack-soar-framework)).  
