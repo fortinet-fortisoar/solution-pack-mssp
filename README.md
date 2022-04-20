@@ -1,5 +1,11 @@
 # Multi Tenancy Addons Solution Pack
 
+## Release Information
+- Solution Pack Version: 1.0.1
+- Minimum Compatible FortiSOAR™ Version: 7.2.0
+- Authored By: Fortinet
+- Certified: Yes
+
 ## Overview
 ### Introduction
 The FortiSOAR™ Multi Tenancy Addons Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture. 
@@ -9,14 +15,12 @@ To achieve this, Enable the Remote Execution Flag on the tenant node, which will
 ### Usage 
 More information about usage/Configuring of Multi Tenancy Addons Solution Pack [here](https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy/blob/develop/docs/solution-pack-guide.md).
 
-## Version Information
-- Solution Pack Version: 1.0.1
-- Minimum Compatible FortiSOAR™ Version: 7.2.0
-- Authored By: Fortinet
-- Certified: Yes
-
 ## Prerequisites
-- Deploy the Multi Tenancy Addons Solution Pack. However, before you deploy the Multi Tenancy Addons Solution Pack, ensure that you have to deployed the SOAR Framework Solution Pack ([solution-pack-soar-framework](https://github.com/fortinet-fortisoar/solution-pack-soar-framework)).  
+
+**Solution Pack Name**|**Purpose**|**Doc Link**|
+| :- | :- | :- |
+|SOAR Framework 1.0.0|Require for Incident Response modules|[Click here](https://github.com/fortinet-fortisoar/solution-pack-soar-framework/blob/develop/README.md)|
+
   **Important**: You must install Multi Tenancy Addons solution pack on both the 'Master' and the 'Tenant' nodes.
 
 ## Contents
