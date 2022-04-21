@@ -1,29 +1,35 @@
 # Multi Tenancy Addons Solution Pack
 
 ## Release Information
+
 - Solution Pack Version: 1.0.1
 - Minimum Compatible FortiSOAR™ Version: 7.2.0
 - Authored By: Fortinet
 - Certified: Yes
 
 ## Overview
-### Introduction
-The FortiSOAR™ Multi Tenancy Addons Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture. 
 
-This solution pack performs various mitigation operations on tenants from the master instance. 
-To achieve this, Enable the Remote Execution Flag on the tenant node, which will add “Playbook Mappings” in the “Remote Tenant Manager” tab under “Multitenancy Section” on the Master node, then Map Aliases of remote actions playbooks on the Master node.
-### Usage 
+### Introduction
+
+The FortiSOAR™ Multi Tenancy Addons Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture.
+
+This solution pack performs various mitigation operations on tenants from the master instance.
+To achieve this, Enable the Remote Execution Flag on the tenant node, which will add "Playbook Mappings" in the "Remote Tenant Manager" tab under "Multitenancy Section" on the Master node, then Map Aliases of remote actions playbooks on the Master node.
+
+### Usage
+
 More information about usage/Configuring of Multi Tenancy Addons Solution Pack [here](https://github.com/fortinet-fortisoar/solution-pack-multi-tenancy/blob/develop/docs/solution-pack-guide.md).
 
 ## Prerequisites
 
-**Solution Pack Name**|**Purpose**|**Doc Link**|
+|**Solution Pack Name**|**Purpose**|**Doc Link**|
 | :- | :- | :- |
 |SOAR Framework 1.0.0|Require for Incident Response modules|[Click here](https://github.com/fortinet-fortisoar/solution-pack-soar-framework/blob/develop/README.md)|
 
   **Important**: You must install Multi Tenancy Addons solution pack on both the 'Master' and the 'Tenant' nodes.
 
 ## Contents
+
 1. Dashboards (s)
     - MSSP Overview
     - Tenant Overview
@@ -34,9 +40,9 @@ More information about usage/Configuring of Multi Tenancy Addons Solution Pack [
     - Tenant Weekly Incident Report
 3. Playbook Collection(s)
     - 04 - Actions (Remote) (18): You can use the playbooks in the 04-Actions (Remote) collection to perform various operations or actions such as blocking or unblocking domains, URLs, hosts, etc on remote tenant.
-    Following is a table that lists the playbooks that are a part of the “04-Actions (Remote)” collection in the Solution Pack:
+    Following is a table that lists the playbooks that are a part of the "04-Actions (Remote)" collection in the Solution Pack:
 
-    **SN**|**Playbook Name**|**Description**|
+    |**SN**|**Playbook Name**|**Description**|
     | :- | :- | :- |
     |1|Alias Mapping|Map alias with remote actions playbooks|
     |2|Alias Mapping - Update Playbook|This is a subroutine playbook to update the playbook with alias|
@@ -54,6 +60,5 @@ More information about usage/Configuring of Multi Tenancy Addons Solution Pack [
     |14|Remote Action - Host - Unblock (Indicator)|Unblocks indicators of type 'Host' on the firewall and marks the indicators as "Unblocked" based on their block status on Tenant.|
     |15|Remote Action - IP Address - Block (Indicator)|Blocks indicators of type 'IP Address' on the firewall and marks the indicators as "Blocked" based on their block status on Tenant.|
     |16|Remote Action - IP Address - Unblock (Indicator)|Unblocks indicators of type 'IP Address' on the firewall and marks the indicator as "Unblocked" based on their block status on Tenant.|
-    |17|Remote Action - URL - Block (Indicator)|Blocks indicators of type 'URL' on the firewall and marks the indicators as “Blocked” based on their block status on Tenant.|
+    |17|Remote Action - URL - Block (Indicator)|Blocks indicators of type 'URL' on the firewall and marks the indicators as "Blocked" based on their block status on Tenant.|
     |18|Remote Action - URL - Unblock (Indicator)|Unblocks indicators of type 'URL' on the firewall and marks the indicators as "Unblocked" based on their block status on Tenant.|
-
