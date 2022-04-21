@@ -40,7 +40,7 @@ More information about usage/Configuring of Multi Tenancy Addons Solution Pack [
     - Tenant Weekly Incident Report
 3. Playbook Collection(s)
     - 04 - Actions (Remote) (18): You can use the playbooks in the 04-Actions (Remote) collection to perform various operations or actions such as blocking or unblocking domains, URLs, hosts, etc on remote tenant.
-    Following is a table that lists the playbooks that are a part of the "04-Actions (Remote)" collection in the Solution Pack:
+    
 
     |**SN**|**Playbook Name**|**Description**|
     | :- | :- | :- |
