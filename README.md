@@ -13,8 +13,9 @@
 
 The FortiSOAR™ Multi Tenancy Addons Solution Pack (solution-pack-multi-tenancy) for Managed Security Service Providers (MSSPs). This solution pack enables users to experience the power and capability of FortiSOAR™ incident response in a multi-tenant architecture.
 
-This solution pack performs various mitigation operations on tenants from the master instance.
-To achieve this, Enable the Remote Execution Flag on the tenant node, which will add "Playbook Mappings" in the "Remote Tenant Manager" tab under "Multitenancy Section" on the Master node, then Map Aliases of remote actions playbooks on the Master node.
+This solution pack provides a template of mitigation playbooks that can are agnostic of underneath tenants. You can configure these remotely executable playbooks to execute mitigation actions on the tenants from the master node. For example, if you require to block a domain on a tenant node from the master node, then you can use the remote executable playbooks that are part of this solution pack to achieve this action.
+
+To use the remote executable playbooks, enable the Remote Execution Flag on the tenant node. This adds "Playbook Mappings" in the "Remote Tenant Manager" tab under the "Multitenancy Section" on the master node, and then Map Aliases of remote actions playbooks on the master node.
 
 ### Usage
 
@@ -40,7 +41,6 @@ More information about usage/Configuring of Multi Tenancy Addons Solution Pack [
     - Tenant Weekly Incident Report
 3. Playbook Collection(s)
     - 04 - Actions (Remote) (18): You can use the playbooks in the 04-Actions (Remote) collection to perform various operations or actions such as blocking or unblocking domains, URLs, hosts, etc on remote tenant.
-    
 
     |**SN**|**Playbook Name**|**Description**|
     | :- | :- | :- |
